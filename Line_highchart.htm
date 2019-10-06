@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+#container {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
+		</style>
+	</head>
+	<body>
+<script src="Highcharts-7.2.0/code/highcharts.js"></script>
+<script src="Highcharts-7.2.0/code/modules/series-label.js"></script>
+<script src="Highcharts-7.2.0/code/modules/exporting.js"></script>
+<script src="Highcharts-7.2.0/code/modules/export-data.js"></script>
+
+<div id="container"></div>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+
+    title: {
+        text: 'ucsd cds women admission data, 2015-2018'
+    },
+
+   
+
+    yAxis: {
+        title: {
+            text: 'Number'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2015
+        }
+    },
+
+    series: [{
+        name: 'fulltime_women_applied',
+        data: [41047, 44430, 46845, 52265]
+    }, {
+        name: 'fulltime_women_admitted',
+        data: [13761, 16170, 16231, 15821]
+    }, {
+        name: 'fulltime_women_enrolled',
+        data: [2581, 3077, 2794,3484]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+	</body>
+</html>

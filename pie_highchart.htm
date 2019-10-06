@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="Highcharts-7.2.0/code/highcharts.js"></script>
+<script src="Highcharts-7.2.0/code/modules/export-data.js"></script>
+<script src="Highcharts-7.2.0/code/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'ucsd cds admission data, 2018'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'admission type',
+        colorByPoint: true,
+        data: [{
+            name: 'fulltime_men_applied',
+            y: 45636,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'fulltime_women_applied',
+            y: 52265
+        }, {
+            name: 'fulltime_men_admitted',
+            y: 13781
+        }, {
+            name: 'fulltime_women_admitted',
+            y: 15821
+        }, {
+            name: 'fulltime_men_enrolled',
+            y: 3220
+        }, {
+            name: 'fulltime_women_enrolled',
+            y: 3484
+        }]
+    }]
+});
+		</script>
+	</body>
+</html>
